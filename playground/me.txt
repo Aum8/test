@@ -1,0 +1,5 @@
+{{#user}}
+Name: Aum
+Skills: Python, Cloud computing, Data Analysis,HTML, CSS
+Email: aum832003@gmail.com
+{{/user}}
