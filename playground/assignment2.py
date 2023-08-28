@@ -1,5 +1,8 @@
 import pyparsing as pp
 
+
+## Skip to line 223 for the utility function
+
 pp.ParserElement.enable_packrat()
 # pp.enable_diag(pp.Diagnostics.enable_debug_on_named_expressions)
 # pp.autoname_elements()
@@ -215,6 +218,9 @@ content = pp.Group(pp.Combine(pp.OneOrMore(stripped_whitespace | unstripped_whit
 program_chunk <<= (long_comment | comment | escaped_command | unrelated_escape | block_partial | block_command | partial | command | content).leave_whitespace()
 program <<= pp.ZeroOrMore(program_chunk)("program").leave_whitespace().set_name("program")
 grammar = (program + pp.StringEnd()).parse_with_tabs()
+
+
+# Utility Function for chat template
 
 def format_chat_template(input_text):
     # Parse the input text using the existing parser
